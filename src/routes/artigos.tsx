@@ -20,7 +20,13 @@ function ArticlesHub() {
       hrefPrefix={routes.articlesHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
-      items={q.data?.data.map((a) => ({ slug: a.slug, title: a.title, excerpt: a.excerpt, badge: `${a.readingTime} min` }))}
+      items={q.data?.data.map((a) => ({
+        slug: a.slug,
+        title: a.title,
+        excerpt: a.excerpt,
+        badge: `${a.readingTime} min`,
+        image: a.coverImage ? { url: a.coverImage.url, alt: a.coverImage.alt } : undefined,
+      }))}
     />
   );
 }
