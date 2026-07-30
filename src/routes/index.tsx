@@ -55,23 +55,32 @@ function HomePage() {
                 </Link>
               </div>
             </Stack>
-            <Card>
-              <CardContent>
-                <p className="type-overline">Navegue por áreas</p>
-                <ul className="mt-4 grid grid-cols-2 gap-2">
-                  {primaryNav.map((n) => (
-                    <li key={n.to}>
-                      <Link
-                        to={n.to}
-                        className="block rounded-md border border-border px-3 py-2 type-small hover:bg-muted"
-                      >
-                        {n.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="relative">
+              <img
+                src={heroImage}
+                alt="Estudantes reunidos estudando em um espaço moderno de aprendizagem"
+                width={1408}
+                height={1056}
+                className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
+              />
+              <Card className="mt-6">
+                <CardContent>
+                  <p className="type-overline">Navegue por áreas</p>
+                  <ul className="mt-4 grid grid-cols-2 gap-2">
+                    {primaryNav.map((n) => (
+                      <li key={n.to}>
+                        <Link
+                          to={n.to}
+                          className="block rounded-md border border-border px-3 py-2 type-small hover:bg-muted"
+                        >
+                          {n.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </Container>
       </Section>
@@ -88,6 +97,9 @@ function HomePage() {
               title: a.title,
               excerpt: a.excerpt,
               badge: `${a.readingTime} min de leitura`,
+              image: a.coverImage
+                ? { url: a.coverImage.url, alt: a.coverImage.alt }
+                : undefined,
             }))}
           />
         </Container>
