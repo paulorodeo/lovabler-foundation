@@ -15,6 +15,7 @@ export interface ContentGridItem {
   title: string;
   excerpt?: string;
   badge?: string;
+  image?: { url: string; alt: string };
 }
 
 interface Props {
@@ -58,7 +59,17 @@ export function ContentGrid({
     <Grid cols={3}>
       {items.map((item) => (
         <Link key={item.slug} to={`${hrefPrefix}/${item.slug}`} className="group">
-          <Card className="h-full transition-transform group-hover:-translate-y-0.5">
+          <Card className="h-full overflow-hidden transition-transform group-hover:-translate-y-0.5">
+            {item.image ? (
+              <img
+                src={item.image.url}
+                alt={item.image.alt}
+                loading="lazy"
+                width={1200}
+                height={800}
+                className="aspect-[3/2] w-full object-cover"
+              />
+            ) : null}
             <CardContent>
               {item.badge ? <Badge className="mb-3">{item.badge}</Badge> : null}
               <CardTitle>{item.title}</CardTitle>

@@ -9,6 +9,9 @@ import type { Course } from "@/domains/education/types";
 import type { Profession, Career } from "@/domains/market/types";
 import type { Institution, Author } from "@/domains/institutional/types";
 import type { Category } from "@/domains/organization/types";
+import articleCursoTecnico from "@/assets/article-curso-tecnico.jpg";
+import articleMercadoTecnologia from "@/assets/article-mercado-tecnologia.jpg";
+import articleCompetencias from "@/assets/article-competencias.jpg";
 
 const now = "2026-07-01T12:00:00Z";
 
@@ -27,6 +30,13 @@ export const mockArticles: Article[] = [
   {
     ...base("como-escolher-um-curso-tecnico"),
     kind: "article",
+    coverImage: {
+      id: "cover-como-escolher-um-curso-tecnico",
+      url: articleCursoTecnico,
+      alt: "Estudante consultando opções de cursos técnicos em um tablet",
+      width: 1200,
+      height: 800,
+    },
     title: "Como escolher um curso técnico alinhado à sua carreira",
     excerpt: "Um guia prático para avaliar modalidade, duração e reconhecimento do MEC.",
     readingTime: 8,
@@ -37,6 +47,13 @@ export const mockArticles: Article[] = [
   {
     ...base("mercado-de-trabalho-em-tecnologia-2026"),
     kind: "article",
+    coverImage: {
+      id: "cover-mercado-de-trabalho-em-tecnologia-2026",
+      url: articleMercadoTecnologia,
+      alt: "Profissional de tecnologia analisando gráficos de mercado em múltiplas telas",
+      width: 1200,
+      height: 800,
+    },
     title: "Panorama do mercado de trabalho em tecnologia em 2026",
     excerpt: "Áreas em alta, salários médios e habilidades mais demandadas.",
     readingTime: 12,
@@ -47,6 +64,13 @@ export const mockArticles: Article[] = [
   {
     ...base("competencias-para-a-nova-economia"),
     kind: "article",
+    coverImage: {
+      id: "cover-competencias-para-a-nova-economia",
+      url: articleCompetencias,
+      alt: "Equipe diversa em workshop de competências profissionais",
+      width: 1200,
+      height: 800,
+    },
     title: "Competências essenciais para a nova economia",
     excerpt: "Como desenvolver habilidades transversais que atravessam qualquer área.",
     readingTime: 6,
