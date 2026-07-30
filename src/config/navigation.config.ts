@@ -27,6 +27,15 @@ export const primaryNav: readonly NavItem[] = [
   { label: routes.newsHub.label, to: routes.newsHub.path },
 ];
 
+/** Menu enxuto do header (padrão das referências de layout). */
+export const headerNav: readonly NavItem[] = [
+  { label: "Home", to: routes.home.path },
+  { label: "Blog", to: routes.articlesHub.path },
+  { label: routes.coursesHub.label, to: routes.coursesHub.path },
+  { label: routes.about.label, to: routes.about.path },
+  { label: routes.contact.label, to: routes.contact.path },
+];
+
 export const footerNav: readonly NavGroup[] = [
   {
     label: "Editorial",
