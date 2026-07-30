@@ -28,62 +28,8 @@ function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <Section spacing="lg" className="bg-surface">
-        <Container size="xl">
-          <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <Stack gap={6}>
-              <Badge variant="accent" className="w-fit">{siteConfig.name}</Badge>
-              <h1 className="type-display max-w-2xl">
-                Conhecimento organizado para orientar sua carreira.
-              </h1>
-              <p className="type-lead max-w-xl">
-                {siteConfig.description}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  to={routes.coursesHub.path}
-                  className="inline-flex h-11 items-center rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground hover:opacity-90"
-                >
-                  Explorar cursos
-                </Link>
-                <Link
-                  to={routes.articlesHub.path}
-                  className="inline-flex h-11 items-center rounded-md border border-border px-5 text-sm font-medium hover:bg-muted"
-                >
-                  Ler artigos
-                </Link>
-              </div>
-            </Stack>
-            <div className="relative">
-              <img
-                src={heroImage}
-                alt="Estudantes reunidos estudando em um espaço moderno de aprendizagem"
-                width={1408}
-                height={1056}
-                className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
-              />
-              <Card className="mt-6">
-                <CardContent>
-                  <p className="type-overline">Navegue por áreas</p>
-                  <ul className="mt-4 grid grid-cols-2 gap-2">
-                    {primaryNav.map((n) => (
-                      <li key={n.to}>
-                        <Link
-                          to={n.to}
-                          className="block rounded-md border border-border px-3 py-2 type-small hover:bg-muted"
-                        >
-                          {n.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <HomeHero />
+
 
       <Section>
         <Container size="xl">
