@@ -22,7 +22,7 @@ export function HomeHero() {
         <div className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted via-background to-muted">
           <div className="grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[1.05fr_1fr] lg:gap-6 lg:p-14">
             <div className="relative z-10 flex flex-col gap-6">
-              <Badge variant="secondary" className="w-fit bg-primary/10 text-primary">
+              <Badge variant="outline" className="w-fit border-primary/20 bg-primary/10 text-primary">
                 {heroConfig.badge}
               </Badge>
 
