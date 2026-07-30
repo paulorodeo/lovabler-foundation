@@ -8,6 +8,7 @@ import { buildRouteHead } from "@/components/seo/head";
 import { routes } from "@/config/routes.config";
 import { siteConfig } from "@/config/site.config";
 import { primaryNav } from "@/config/navigation.config";
+import heroImage from "@/assets/hero-uniejatec.jpg";
 
 export const Route = createFileRoute("/")({
   head: () =>
