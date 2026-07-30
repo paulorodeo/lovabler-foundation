@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AnnouncementBar } from "./announcement-bar";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
 import { Breadcrumb } from "./breadcrumb";
