@@ -1,14 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Container, Section, Grid, Stack } from "@/components/ui/layout-primitives";
+import { Container, Section, Grid } from "@/components/ui/layout-primitives";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ContentGrid } from "@/features/content-grid";
+import { HomeHero } from "@/features/home-hero";
 import { useArticles, useCourses, useProfessions } from "@/hooks/use-content";
 import { buildRouteHead } from "@/components/seo/head";
 import { routes } from "@/config/routes.config";
 import { siteConfig } from "@/config/site.config";
-import { primaryNav } from "@/config/navigation.config";
-import heroImage from "@/assets/hero-uniejatec.jpg";
 
 export const Route = createFileRoute("/")({
   head: () =>
