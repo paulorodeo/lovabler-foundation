@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Container } from "@/components/ui/layout-primitives";
 import { footerNav } from "@/config/navigation.config";
 import { siteConfig } from "@/config/site.config";
+import logoFooter from "@/assets/logo-footer.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -9,7 +10,14 @@ export function SiteFooter() {
       <Container size="xl" className="py-12">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
           <div>
-            <p className="type-h4">{siteConfig.name}</p>
+            <img
+              src={logoFooter.url}
+              alt={siteConfig.name}
+              width={240}
+              height={64}
+              loading="lazy"
+              className="h-12 w-auto"
+            />
             <p className="mt-3 max-w-xs type-small text-text-secondary">{siteConfig.description}</p>
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">

@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { GraduationCap, Menu, Search, UserRound } from "lucide-react";
+import { Menu, Search, UserRound } from "lucide-react";
+import logoHeader from "@/assets/logo-header.png.asset.json";
 import { Container } from "@/components/ui/layout-primitives";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { headerNav } from "@/config/navigation.config";
@@ -23,10 +24,13 @@ export function SiteHeader() {
             className="flex shrink-0 items-center gap-2"
             aria-label={siteConfig.name}
           >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <GraduationCap className="h-5 w-5" />
-            </span>
-            <span className="type-h4 text-primary">{siteConfig.name}</span>
+            <img
+              src={logoHeader.url}
+              alt={siteConfig.name}
+              width={240}
+              height={64}
+              className="h-10 w-auto lg:h-12"
+            />
           </Link>
 
           <nav aria-label="Principal" className="hidden lg:block">
