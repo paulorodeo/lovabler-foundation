@@ -13,10 +13,10 @@ export function SiteFooter() {
             <img
               src={logoFooter.url}
               alt={siteConfig.name}
-              width={240}
-              height={64}
+              width={1209}
+              height={262}
               loading="lazy"
-              className="h-12 w-auto"
+              className="h-14 w-auto sm:h-16"
             />
             <p className="mt-3 max-w-xs type-small text-text-secondary">{siteConfig.description}</p>
           </div>

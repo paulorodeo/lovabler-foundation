@@ -27,9 +27,9 @@ export function SiteHeader() {
             <img
               src={logoHeader.url}
               alt={siteConfig.name}
-              width={240}
-              height={64}
-              className="h-10 w-auto lg:h-12"
+              width={1171}
+              height={254}
+              className="h-11 w-auto sm:h-12 lg:h-14"
             />
           </Link>
 
