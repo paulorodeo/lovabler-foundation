@@ -34,7 +34,7 @@ function HomePage() {
         <Container size="xl">
           <SectionHeading title="Artigos em destaque" to={routes.articlesHub.path} />
           <ContentGrid
-            hrefPrefix={routes.articlesHub.path}
+            to={routes.articleDetail.path}
             isLoading={articles.isLoading}
             isError={articles.isError}
             items={articles.data?.data.map((a) => ({
@@ -54,7 +54,7 @@ function HomePage() {
         <Container size="xl">
           <SectionHeading title="Cursos recomendados" to={routes.coursesHub.path} />
           <ContentGrid
-            hrefPrefix={routes.coursesHub.path}
+            to={routes.courseDetail.path}
             isLoading={courses.isLoading}
             isError={courses.isError}
             items={courses.data?.data.map((c) => ({
@@ -72,7 +72,7 @@ function HomePage() {
           <SectionHeading title="Profissões em foco" to={routes.professionsHub.path} />
           <Grid cols={3}>
             {(professions.data?.data ?? []).map((p) => (
-              <Link key={p.slug} to={`${routes.professionsHub.path}/${p.slug}`}>
+              <Link key={p.slug} to="/profissoes/$slug" params={{ slug: p.slug }}>
                 <Card className="h-full">
                   <CardContent>
                     <Badge>{p.area}</Badge>
