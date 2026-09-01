@@ -16,7 +16,7 @@ function FaqHub() {
       overline="Editorial"
       title="Perguntas Frequentes"
       description="Respostas objetivas para as dúvidas mais comuns."
-      hrefPrefix={routes.faqHub.path}
+      to={routes.faqDetail.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((f) => ({ slug: f.slug, title: f.question, excerpt: f.answer }))}

@@ -16,7 +16,7 @@ function CategoriesHub() {
       overline="Organização"
       title="Categorias"
       description="Áreas de conhecimento organizadas para facilitar a navegação."
-      hrefPrefix={routes.categoriesHub.path}
+      to={routes.categoryDetail.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((c) => ({ slug: c.slug, title: c.title, excerpt: c.description }))}

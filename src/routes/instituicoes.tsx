@@ -16,7 +16,7 @@ function InstitutionsHub() {
       overline="Institucional"
       title="Instituições"
       description="Conheça a UniEjatec e sua rede de instituições parceiras."
-      hrefPrefix={routes.institutionsHub.path}
+      to={routes.institutionDetail.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((i) => ({ slug: i.slug, title: i.title, excerpt: i.excerpt }))}
