@@ -18,11 +18,11 @@ export interface ContentGridItem {
   image?: { url: string; alt: string };
 }
 
-interface Props {
+interface Props<TTo extends string> {
   items: ContentGridItem[] | undefined;
   isLoading: boolean;
   isError: boolean;
-  hrefPrefix: string;
+  to: TTo;
   emptyTitle?: string;
   emptyDescription?: string;
 }
