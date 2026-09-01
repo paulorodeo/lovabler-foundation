@@ -16,15 +16,15 @@ interface Props<TTo extends string> {
   items: ContentGridItem[] | undefined;
 }
 
-export function HubPage({
+export function HubPage<TTo extends string>({
   overline,
   title,
   description,
-  hrefPrefix,
+  to,
   isLoading,
   isError,
   items,
-}: Props) {
+}: Props<TTo>) {
   return (
     <>
       <PageHeader overline={overline} title={title} description={description} />
