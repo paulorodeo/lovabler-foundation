@@ -72,7 +72,7 @@ function HomePage() {
           <SectionHeading title="Profissões em foco" to={routes.professionsHub.path} />
           <Grid cols={3}>
             {(professions.data?.data ?? []).map((p) => (
-              <Link key={p.slug} to={`${routes.professionsHub.path}/${p.slug}`}>
+              <Link key={p.slug} to="/profissoes/$slug" params={{ slug: p.slug }}>
                 <Card className="h-full">
                   <CardContent>
                     <Badge>{p.area}</Badge>

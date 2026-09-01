@@ -1,9 +1,13 @@
 /**
  * ContentGrid — feature genérica de listagem editorial/comercial.
  * Consome hooks e renderiza cards. Estados obrigatórios: loading, error, empty.
+ *
+ * Usa <a> para o link do card porque o componente é genérico e recebe um
+ * hrefPrefix em tempo de execução; o roteador tipado do TanStack não consegue
+ * validar rotas dinâmicas construídas por interpolação sem um literal de rota
+ * conhecido em cada call site.
  */
 
-import { Link } from "@tanstack/react-router";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Grid } from "@/components/ui/layout-primitives";
@@ -58,7 +62,7 @@ export function ContentGrid({
   return (
     <Grid cols={3}>
       {items.map((item) => (
-        <Link key={item.slug} to={`${hrefPrefix}/${item.slug}`} className="group">
+        <a key={item.slug} href={`${hrefPrefix}/${item.slug}`} className="group">
           <Card className="h-full overflow-hidden transition-transform group-hover:-translate-y-0.5">
             {item.image ? (
               <img
@@ -77,7 +81,7 @@ export function ContentGrid({
               <p className="mt-4 type-caption text-primary">Ler mais →</p>
             </CardContent>
           </Card>
-        </Link>
+        </a>
       ))}
     </Grid>
   );
