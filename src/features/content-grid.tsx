@@ -81,7 +81,7 @@ export function ContentGrid({
               <p className="mt-4 type-caption text-primary">Ler mais →</p>
             </CardContent>
           </Card>
-        </Link>
+        </a>
       ))}
     </Grid>
   );
