@@ -62,7 +62,7 @@ export function ContentGrid({
   return (
     <Grid cols={3}>
       {items.map((item) => (
-        <Link key={item.slug} to={to} params={{ slug: item.slug }} className="group">
+        <a key={item.slug} href={`${hrefPrefix}/${item.slug}`} className="group">
           <Card className="h-full overflow-hidden transition-transform group-hover:-translate-y-0.5">
             {item.image ? (
               <img
