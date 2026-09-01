@@ -17,7 +17,7 @@ function ArticlesHub() {
       overline="Editorial"
       title="Artigos"
       description="Análises, tendências e orientação profissional produzidas pela UniEjatec."
-      hrefPrefix={routes.articlesHub.path}
+      to={routes.articleDetail.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((a) => ({
