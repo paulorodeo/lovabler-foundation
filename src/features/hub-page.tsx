@@ -34,7 +34,7 @@ export function HubPage<TTo extends string>({
             items={items}
             isLoading={isLoading}
             isError={isError}
-            hrefPrefix={hrefPrefix}
+            to={to}
           />
         </Container>
       </Section>
