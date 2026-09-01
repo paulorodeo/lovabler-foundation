@@ -6,11 +6,11 @@ import { Container, Section } from "@/components/ui/layout-primitives";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentGrid, type ContentGridItem } from "./content-grid";
 
-interface Props {
+interface Props<TTo extends string> {
   overline: string;
   title: string;
   description: string;
-  hrefPrefix: string;
+  to: TTo;
   isLoading: boolean;
   isError: boolean;
   items: ContentGridItem[] | undefined;
