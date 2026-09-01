@@ -27,14 +27,14 @@ interface Props<TTo extends string> {
   emptyDescription?: string;
 }
 
-export function ContentGrid({
+export function ContentGrid<TTo extends string>({
   items,
   isLoading,
   isError,
-  hrefPrefix,
+  to,
   emptyTitle = "Nenhum conteúdo disponível",
   emptyDescription = "Novos conteúdos serão publicados em breve.",
-}: Props) {
+}: Props<TTo>) {
   if (isLoading) {
     return (
       <Grid cols={3}>
