@@ -22,23 +22,23 @@ export interface ContentGridItem {
   image?: { url: string; alt: string };
 }
 
-interface Props<TTo extends string> {
+interface Props {
   items: ContentGridItem[] | undefined;
   isLoading: boolean;
   isError: boolean;
-  to: TTo;
+  hrefPrefix: string;
   emptyTitle?: string;
   emptyDescription?: string;
 }
 
-export function ContentGrid<TTo extends string>({
+export function ContentGrid({
   items,
   isLoading,
   isError,
-  to,
+  hrefPrefix,
   emptyTitle = "Nenhum conteúdo disponível",
   emptyDescription = "Novos conteúdos serão publicados em breve.",
-}: Props<TTo>) {
+}: Props) {
   if (isLoading) {
     return (
       <Grid cols={3}>
