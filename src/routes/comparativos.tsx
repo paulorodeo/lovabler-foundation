@@ -16,7 +16,7 @@ function ComparisonsHub() {
       overline="Editorial"
       title="Comparativos"
       description="Análises comparativas para apoiar suas decisões."
-      to={routes.comparisonDetail.path}
+      hrefPrefix={routes.comparisonsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((c) => ({ slug: c.slug, title: c.title, excerpt: c.excerpt }))}

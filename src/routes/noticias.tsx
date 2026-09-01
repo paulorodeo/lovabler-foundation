@@ -16,7 +16,7 @@ function NewsHub() {
       overline="Editorial"
       title="Notícias"
       description="Últimas atualizações institucionais e do setor educacional."
-      to={routes.newsDetail.path}
+      hrefPrefix={routes.newsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((n) => ({ slug: n.slug, title: n.title, excerpt: n.excerpt }))}

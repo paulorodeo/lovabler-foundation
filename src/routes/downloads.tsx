@@ -16,7 +16,7 @@ function DownloadsHub() {
       overline="Recursos"
       title="Downloads"
       description="E-books, planilhas e materiais complementares."
-      to={routes.downloadDetail.path}
+      hrefPrefix={routes.downloadsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((d) => ({ slug: d.slug, title: d.title, excerpt: d.excerpt, badge: d.format }))}

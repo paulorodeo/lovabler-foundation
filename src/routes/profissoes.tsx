@@ -16,7 +16,7 @@ function ProfessionsHub() {
       overline="Mercado"
       title="Profissões"
       description="Descubra o dia a dia, salários e caminhos de formação de cada profissão."
-      to={routes.professionDetail.path}
+      hrefPrefix={routes.professionsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((p) => ({ slug: p.slug, title: p.title, excerpt: p.excerpt, badge: p.area }))}

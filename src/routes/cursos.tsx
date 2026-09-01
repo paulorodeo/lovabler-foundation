@@ -16,7 +16,7 @@ function CoursesHub() {
       overline="Educação"
       title="Cursos"
       description="Formações técnicas, superiores e livres para cada momento da carreira."
-      to={routes.courseDetail.path}
+      hrefPrefix={routes.coursesHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((c) => ({ slug: c.slug, title: c.title, excerpt: c.excerpt, badge: c.modality.toUpperCase() }))}

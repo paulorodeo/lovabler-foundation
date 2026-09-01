@@ -16,7 +16,7 @@ function GlossaryHub() {
       overline="Editorial"
       title="Glossário"
       description="Definições oficiais dos principais termos utilizados na plataforma."
-      to={routes.glossaryDetail.path}
+      hrefPrefix={routes.glossaryHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((g) => ({ slug: g.slug, title: g.term, excerpt: g.definition }))}

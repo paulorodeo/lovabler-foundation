@@ -16,7 +16,7 @@ function GuidesHub() {
       overline="Editorial"
       title="Guias"
       description="Materiais longos e aprofundados para orientar suas escolhas."
-      to={routes.guideDetail.path}
+      hrefPrefix={routes.guidesHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((g) => ({ slug: g.slug, title: g.title, excerpt: g.excerpt, badge: `${g.chapters} capítulos` }))}

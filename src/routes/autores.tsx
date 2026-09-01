@@ -16,7 +16,7 @@ function AuthorsHub() {
       overline="Institucional"
       title="Autores"
       description="Editores, colunistas e especialistas responsáveis pelos conteúdos."
-      to={routes.authorDetail.path}
+      hrefPrefix={routes.authorsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
       items={q.data?.data.map((a) => ({ slug: a.slug, title: a.name, excerpt: a.excerpt, badge: a.role }))}
