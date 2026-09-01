@@ -1,9 +1,13 @@
 /**
  * ContentGrid — feature genérica de listagem editorial/comercial.
  * Consome hooks e renderiza cards. Estados obrigatórios: loading, error, empty.
+ *
+ * Usa <a> para o link do card porque o componente é genérico e recebe um
+ * hrefPrefix em tempo de execução; o roteador tipado do TanStack não consegue
+ * validar rotas dinâmicas construídas por interpolação sem um literal de rota
+ * conhecido em cada call site.
  */
 
-import { Link } from "@tanstack/react-router";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Grid } from "@/components/ui/layout-primitives";
