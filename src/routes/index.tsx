@@ -34,7 +34,7 @@ function HomePage() {
         <Container size="xl">
           <SectionHeading title="Artigos em destaque" to={routes.articlesHub.path} />
           <ContentGrid
-            to={routes.articleDetail.path}
+            hrefPrefix={routes.articlesHub.path}
             isLoading={articles.isLoading}
             isError={articles.isError}
             items={articles.data?.data.map((a) => ({
@@ -54,7 +54,7 @@ function HomePage() {
         <Container size="xl">
           <SectionHeading title="Cursos recomendados" to={routes.coursesHub.path} />
           <ContentGrid
-            to={routes.courseDetail.path}
+            hrefPrefix={routes.coursesHub.path}
             isLoading={courses.isLoading}
             isError={courses.isError}
             items={courses.data?.data.map((c) => ({
