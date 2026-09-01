@@ -6,25 +6,25 @@ import { Container, Section } from "@/components/ui/layout-primitives";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentGrid, type ContentGridItem } from "./content-grid";
 
-interface Props<TTo extends string> {
+interface Props {
   overline: string;
   title: string;
   description: string;
-  to: TTo;
+  hrefPrefix: string;
   isLoading: boolean;
   isError: boolean;
   items: ContentGridItem[] | undefined;
 }
 
-export function HubPage<TTo extends string>({
+export function HubPage({
   overline,
   title,
   description,
-  to,
+  hrefPrefix,
   isLoading,
   isError,
   items,
-}: Props<TTo>) {
+}: Props) {
   return (
     <>
       <PageHeader overline={overline} title={title} description={description} />
