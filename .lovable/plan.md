@@ -17,15 +17,15 @@ Transformar o projeto atual num portal especializado em Mecânica, sem reconstru
 ## Página inicial
 - Barra do topo: "Você já trabalha com Mecânica? Avalie sua experiência — Saiba mais".
 - Hero (mesmo layout):
-  - Título: "Sua experiência profissional em Mecânica pode abrir novos caminhos."
-  - Subtítulo: "Conheça as possibilidades de reconhecimento das suas competências profissionais e descubra os requisitos para obter uma certificação técnica."
-  - Botões: "Avaliar minha experiência" e "Explorar áreas da Mecânica".
+  - Título: "Sua carreira na Mecânica começa ou evolui aqui."
+  - Subtítulo: "Explore cursos técnicos, descubra possibilidades de certificação por competência e encontre conhecimento especializado para avançar na profissão."
+  - Botões: "Avaliar minha experiência" e "Conhecer Cursos Técnicos".
   - Selos neutros, sem promessas (ex.: Certificação por Competência, Cursos Técnicos, Conteúdo especializado, Ecossistema UniEjatec). Sai o card "+15 mil".
-- Logo abaixo do hero: bloco com as 3 frentes lado a lado.
-- Em seguida: grade das áreas da Mecânica, artigos em destaque, cursos técnicos e profissões (seções já existentes).
+- Logo abaixo do hero: acesso às Áreas da Mecânica em destaque, junto do bloco com as 3 frentes.
+- Em seguida: artigos em destaque, cursos técnicos e profissões (seções já existentes).
 
 ## Menu
-Início · Certificação · Cursos Técnicos · Áreas da Mecânica · Artigos · Sobre. Botões do topo: "Avaliar experiência" (principal) e "Cursos Técnicos".
+Início · Certificação por Competência (rótulo completo onde houver espaço; endereço /certificacao) · Cursos Técnicos · Áreas da Mecânica · Artigos · Sobre. Botões do topo: "Avaliar experiência" (principal) e "Cursos Técnicos".
 
 ## Marca
 - Crio **duas opções de logo** "Mecânica Tec" com "by UniEjatec" visível, na paleta azul, e mostro para você escolher. O logo atual só é trocado depois da sua escolha.
@@ -38,7 +38,7 @@ Início · Certificação · Cursos Técnicos · Áreas da Mecânica · Artigos 
 
 ## Conteúdo e cuidados
 - Sem números inventados, depoimentos, selos do MEC ou "100% online garantido".
-- Dados de exemplo ficam separados e marcados como demonstrativos.
+- Dados de exemplo ficam separados, com a marcação demo: true; páginas que mostram dados fictícios ficam ocultas do Google (noindex e fora do sitemap) até receberem conteúdo definitivo.
 - Endereços antigos de EJA/graduação: não existem como páginas próprias hoje; só textos serão limpos. Nenhuma página é removida.
 - Título, descrição e prévia de compartilhamento de todas as páginas atualizados para o domínio `https://mecanica.tec.br`.
 
@@ -48,5 +48,6 @@ Início · Certificação · Cursos Técnicos · Áreas da Mecânica · Artigos 
 - Nova rota `src/routes/certificacao.tsx` usando componentes existentes; novo `src/features/home-pillars.tsx`; `home-hero.tsx` sem card de estatística.
 - `adapters/mock/fixtures.ts`: reescrever categorias (8 áreas com os termos), artigos, cursos, profissões, carreiras e glossário; flag `demo: true` nas fixtures.
 - Sitemap inclui `/certificacao`; JSON-LD Organization/WebSite atualizado.
-- Logos via imagegen premium (2 candidatos) apresentados para escolha antes da troca.
+- Logos via imagegen premium (2 candidatos) apresentados para escolha; identidade atual permanece até a escolha.
+- Rotas alimentadas por fixtures `demo: true` recebem `robots: noindex` e saem do sitemap.
 - Memória: posicionamento, três frentes, público adulto, proibição de promessas/números fictícios, paleta azul mantida. `AGENTS.md`: separação config/dados/interface para continuação no Codex.
