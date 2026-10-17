@@ -29,7 +29,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 
 ## Marca
 - Emblema enviado (engrenagem azul com capelo e seta) vira o símbolo oficial: ícone da aba do navegador (versão azul em fundo transparente) e selo da marca.
-- Kit de marca no projeto com as variações enviadas: azul colorida, branca em fundo azul (badge), preto e branco e totalmente preta — para uso em fundos claros, azuis e escuros.
+- Kit de marca no projeto com as variações enviadas: azul colorida, branca em fundo azul (badge), preto e branco, preta com detalhes brancos e totalmente preta — para uso em fundos claros, azuis e escuros.
 - Crio **duas opções de logo** "Mecânica Tec" com "by UniEjatec" visível, ambas usando esse emblema ao lado do nome, e mostro para você escolher. O logo atual do topo só é trocado depois da sua escolha.
 - Rodapé: mantém o logo UniEjatec e adiciona "Mecânica Tec é um portal do ecossistema UniEjatec".
 
