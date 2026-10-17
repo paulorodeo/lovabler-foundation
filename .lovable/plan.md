@@ -33,7 +33,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Ícone da aba atualizado junto com o logo escolhido.
 
 ## Imagens (fotografia realista premium, tons que conversam com o azul)
-- Hero: um homem e uma mulher adultos, de uniforme técnico, analisando juntos uma peça ou máquina em oficina moderna/indústria; bancada, ferramentas e equipamentos ao fundo. Mesmo tamanho e proporção do hero atual. As fotos enviadas (mecanica-tec) servem de referência de estilo.
+- Hero: usar a foto enviada "Colaboração na Oficina de Engenharia" (homem e mulher de uniforme técnico em oficina). Carregada com prioridade (sem espera), em AVIF com WebP como alternativa para navegadores antigos. Mesmo tamanho e proporção do hero atual. As demais fotos enviadas servem de referência de estilo.
 - Artigos: usinagem/torno CNC, manutenção industrial, mecânica diesel, eletromecânica, metrologia.
 - Cursos técnicos: formação prática em oficina/laboratório.
 - Profissões: o profissional no trabalho real (mecânico industrial, torneiro CNC, soldador...).
@@ -51,6 +51,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - `site.config.ts`: siteConfig (name, url `https://mecanica.tec.br`, organization com `parentOrganization` UniEjatec), announcementConfig, heroConfig, headerCtas; novo `pillarsConfig`.
 - `navigation.config.ts` e `routes.config.ts`: nova entrada `certification` (`/certificacao`), labels "Cursos Técnicos" e "Áreas da Mecânica".
 - Nova rota `src/routes/certificacao.tsx` usando componentes existentes; novo `src/features/home-pillars.tsx`; `home-hero.tsx` sem card de estatística.
+- Hero: `<picture>` com `<source type="image/avif">` + `<img>` WebP, `width=1672 height=941`, `loading="eager"`, `fetchPriority="high"`, `decoding="async"`; ambos os arquivos enviados como assets CDN; `preload` do AVIF no `head()` da home.
 - `adapters/mock/fixtures.ts`: reescrever categorias (8 áreas com os termos), artigos, cursos, profissões, carreiras e glossário; flag `demo: true` nas fixtures.
 - Sitemap inclui `/certificacao`; JSON-LD Organization/WebSite atualizado.
 - Logos via imagegen premium (2 candidatos) apresentados para escolha; identidade atual permanece até a escolha.
