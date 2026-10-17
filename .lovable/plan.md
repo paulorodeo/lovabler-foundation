@@ -28,9 +28,10 @@ Transformar o projeto atual num portal especializado em Mecânica, sem reconstru
 Início · Certificação por Competência (rótulo completo onde houver espaço; endereço /certificacao) · Cursos Técnicos · Áreas da Mecânica · Artigos · Sobre. Botões do topo: "Avaliar experiência" (principal) e "Cursos Técnicos".
 
 ## Marca
-- Crio **duas opções de logo** "Mecânica Tec" com "by UniEjatec" visível, na paleta azul, e mostro para você escolher. O logo atual só é trocado depois da sua escolha.
+- Emblema enviado (engrenagem azul com capelo e seta) vira o símbolo oficial: ícone da aba do navegador (versão azul em fundo transparente) e selo da marca.
+- Kit de marca no projeto com as variações enviadas: azul colorida, branca em fundo azul (badge), preto e branco e totalmente preta — para uso em fundos claros, azuis e escuros.
+- Crio **duas opções de logo** "Mecânica Tec" com "by UniEjatec" visível, ambas usando esse emblema ao lado do nome, e mostro para você escolher. O logo atual do topo só é trocado depois da sua escolha.
 - Rodapé: mantém o logo UniEjatec e adiciona "Mecânica Tec é um portal do ecossistema UniEjatec".
-- Ícone da aba atualizado junto com o logo escolhido.
 
 ## Imagens (fotografia realista premium, tons que conversam com o azul)
 - Hero: usar a foto enviada "Colaboração na Oficina de Engenharia" (homem e mulher de uniforme técnico em oficina). Carregada com prioridade (sem espera), em AVIF com WebP como alternativa para navegadores antigos. Mesmo tamanho e proporção do hero atual. As demais fotos enviadas servem de referência de estilo.
@@ -59,6 +60,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Hero: `<picture>` com `<source type="image/avif">` + `<img>` WebP, `width=1672 height=941`, `loading="eager"`, `fetchPriority="high"`, `decoding="async"`; ambos os arquivos enviados como assets CDN; `preload` do AVIF no `head()` da home.
 - `adapters/mock/fixtures.ts`: reescrever categorias (8 áreas com os termos), artigos, cursos, profissões, carreiras e glossário; flag `demo: true` nas fixtures.
 - Sitemap inclui `/certificacao`; JSON-LD Organization/WebSite atualizado.
-- Logos via imagegen premium (2 candidatos) apresentados para escolha; identidade atual permanece até a escolha.
+- Logos via imagegen premium (2 candidatos, usando o emblema enviado como referência) apresentados para escolha; identidade atual permanece até a escolha.
+- Kit de marca: emblemas enviados como assets CDN em `src/assets/brand/` (azul, badge, bicolor, preto; AVIF/WebP/PNG) e exportados por `src/config/brand.config.ts`. Favicon: emblema azul reduzido para `public/favicon.png` (64x64) + `apple-touch-icon` 180x180, referenciados no `__root.tsx`.
 - Rotas alimentadas por fixtures `demo: true` recebem `robots: noindex` e saem do sitemap.
 - Memória: posicionamento, três frentes, público adulto, proibição de promessas/números fictícios, paleta azul mantida. `AGENTS.md`: separação config/dados/interface para continuação no Codex.
