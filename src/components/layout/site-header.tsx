@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Menu, Search, UserRound } from "lucide-react";
-import logoHeader from "@/assets/logo-header.png.asset.json";
+import { BrandLockup } from "./brand-lockup";
 import { Container } from "@/components/ui/layout-primitives";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { headerNav } from "@/config/navigation.config";
@@ -24,40 +24,41 @@ export function SiteHeader() {
             className="flex shrink-0 items-center gap-2"
             aria-label={siteConfig.name}
           >
-            <img
-              src={logoHeader.url}
-              alt={siteConfig.name}
-              width={1171}
-              height={254}
-              className="h-11 w-auto sm:h-12 lg:h-14"
-            />
+            <BrandLockup />
           </Link>
 
           <nav aria-label="Principal" className="hidden lg:block">
-            <ul className="flex items-center gap-1">
+            <ul className="flex items-center">
               {headerNav.map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
                     activeOptions={{ exact: item.to === routes.home.path }}
-                    className="relative inline-flex h-16 items-center px-3 text-sm font-medium text-text-secondary hover:text-primary lg:h-20"
+                    className="relative inline-flex h-16 items-center whitespace-nowrap px-2.5 text-sm font-medium text-text-secondary hover:text-primary lg:h-20"
                     activeProps={{
                       className:
-                        "text-primary after:absolute after:inset-x-3 after:bottom-4 after:h-0.5 after:rounded-full after:bg-primary",
+                        "text-primary after:absolute after:inset-x-2.5 after:bottom-4 after:h-0.5 after:rounded-full after:bg-primary",
                     }}
                   >
-                    {item.label}
+                    {item.shortLabel ? (
+                      <>
+                        <span className="2xl:hidden">{item.shortLabel}</span>
+                        <span className="hidden 2xl:inline">{item.label}</span>
+                      </>
+                    ) : (
+                      item.label
+                    )}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <div className="ml-auto hidden min-w-0 flex-1 justify-end xl:flex">
+          <div className="ml-auto hidden min-w-0 flex-1 justify-end 2xl:flex">
             <HeaderSearch className="w-full max-w-sm" />
           </div>
 
-          <div className="ml-auto flex items-center gap-2 xl:ml-4">
+          <div className="ml-auto flex items-center gap-2 2xl:ml-4">
             <Link
               to={headerCtas.primary.to}
               className="hidden h-10 items-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:opacity-90 sm:inline-flex"
@@ -66,7 +67,7 @@ export function SiteHeader() {
             </Link>
             <Link
               to={headerCtas.secondary.to}
-              className="hidden h-10 items-center rounded-md border border-primary px-4 text-sm font-medium text-primary hover:bg-muted md:inline-flex"
+              className="hidden h-10 items-center rounded-md border border-primary px-4 text-sm font-medium text-primary hover:bg-muted xl:inline-flex"
             >
               {headerCtas.secondary.label}
             </Link>

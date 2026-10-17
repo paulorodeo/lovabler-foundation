@@ -17,7 +17,6 @@ export function AnnouncementBar() {
       <Container size="xl">
         <div className="relative flex min-h-10 items-center justify-center gap-2 py-2 pr-8 text-center">
           <p className="type-small font-medium">
-            <span aria-hidden className="mr-1">{announcementConfig.emoji}</span>
             {announcementConfig.message}{" "}
             <Link to={announcementConfig.linkTo} className="underline underline-offset-2 hover:opacity-90">
               {announcementConfig.linkLabel}
