@@ -38,7 +38,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Cursos técnicos: formação prática em oficina/laboratório.
 - Profissões: o profissional no trabalho real (mecânico industrial, torneiro CNC, soldador...).
 - Áreas da Mecânica: uma imagem específica para cada uma das 8 áreas.
-- Imagem enviada do instrutor de uniforme azul (mecanica-tec_4) é mantida e usada na página de Certificação por Competência. Antes, removo o logo "SENAI" e o bordado "Instrutor Técnico" da camisa e o texto da parede, pois são de outra instituição.
+- A foto com marca SENAI (mecanica-tec_4) não será usada. A página de Certificação por Competência usa a nova imagem do profissional experiente analisando componentes com tablet, sem marcas de terceiros.
 - Foto enviada "profissional certificado" (mecânico de caminhão) é usada na área Mecânica Pesada e Agrícola, no curso/profissão de Mecânico Diesel e no artigo de mecânica diesel (AVIF com WebP alternativo).
 - Foto enviada "profissional certificado 3" (casal de mecânicos trabalhando juntos) é usada no card de Cursos Técnicos do bloco das três frentes e no topo da página de Cursos (AVIF com WebP alternativo).
 - Imagens atuais genéricas são substituídas. Os cards de cursos, profissões e áreas passam a exibir imagem (mesmo componente de card já usado nos artigos).
