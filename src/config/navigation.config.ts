@@ -11,6 +11,8 @@ export interface NavItem {
   readonly label: string;
   readonly to: string;
   readonly description?: string;
+  /** Rótulo curto para larguras intermediárias. */
+  readonly shortLabel?: string;
 }
 
 export interface NavGroup {
@@ -29,11 +31,12 @@ export const primaryNav: readonly NavItem[] = [
 
 /** Menu enxuto do header (padrão das referências de layout). */
 export const headerNav: readonly NavItem[] = [
-  { label: "Home", to: routes.home.path },
-  { label: "Blog", to: routes.articlesHub.path },
-  { label: routes.coursesHub.label, to: routes.coursesHub.path },
+  { label: "Início", to: routes.home.path },
+  { label: routes.certification.label, shortLabel: "Certificação", to: routes.certification.path },
+  { label: routes.coursesHub.label, shortLabel: "Cursos", to: routes.coursesHub.path },
+  { label: routes.categoriesHub.label, shortLabel: "Áreas", to: routes.categoriesHub.path },
+  { label: routes.articlesHub.label, to: routes.articlesHub.path },
   { label: routes.about.label, to: routes.about.path },
-  { label: routes.contact.label, to: routes.contact.path },
 ];
 
 export const footerNav: readonly NavGroup[] = [
@@ -50,8 +53,9 @@ export const footerNav: readonly NavGroup[] = [
     ],
   },
   {
-    label: "Educação e Mercado",
+    label: "Certificação e Cursos",
     items: [
+      { label: routes.certification.label, to: routes.certification.path },
       { label: routes.coursesHub.label, to: routes.coursesHub.path },
       { label: routes.professionsHub.label, to: routes.professionsHub.path },
       { label: routes.careersHub.label, to: routes.careersHub.path },

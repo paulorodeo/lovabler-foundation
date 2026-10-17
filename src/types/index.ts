@@ -26,6 +26,8 @@ export interface BaseEntity {
   createdAt: ISODateTime;
   updatedAt: ISODateTime;
   publishedAt: ISODateTime | null;
+  /** true = conteúdo demonstrativo (fixture); nunca indexar nem publicar como real. */
+  demo?: boolean;
 }
 
 export interface OpenGraph {

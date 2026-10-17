@@ -44,8 +44,11 @@ export const routes = {
   downloadsHub: { path: "/downloads", label: "Downloads", domain: "editorial", indexable: true },
   downloadDetail: { path: "/downloads/$slug", label: "Download", domain: "editorial", indexable: true, dynamic: true },
 
+  // Comercial
+  certification: { path: "/certificacao", label: "Certificação por Competência", domain: "commercial", indexable: true },
+
   // Educação
-  coursesHub: { path: "/cursos", label: "Cursos", domain: "education", indexable: true },
+  coursesHub: { path: "/cursos", label: "Cursos Técnicos", domain: "education", indexable: true },
   courseDetail: { path: "/cursos/$slug", label: "Curso", domain: "education", indexable: true, dynamic: true },
 
   // Mercado
@@ -55,8 +58,8 @@ export const routes = {
   careerDetail: { path: "/carreiras/$slug", label: "Carreira", domain: "market", indexable: true, dynamic: true },
 
   // Organização
-  categoriesHub: { path: "/categorias", label: "Categorias", domain: "editorial", indexable: true },
-  categoryDetail: { path: "/categorias/$slug", label: "Categoria", domain: "editorial", indexable: true, dynamic: true },
+  categoriesHub: { path: "/categorias", label: "Áreas da Mecânica", domain: "editorial", indexable: true },
+  categoryDetail: { path: "/categorias/$slug", label: "Área", domain: "editorial", indexable: true, dynamic: true },
   authorsHub: { path: "/autores", label: "Autores", domain: "institutional", indexable: true },
   authorDetail: { path: "/autores/$slug", label: "Autor", domain: "institutional", indexable: true, dynamic: true },
   institutionsHub: { path: "/instituicoes", label: "Instituições", domain: "institutional", indexable: true },

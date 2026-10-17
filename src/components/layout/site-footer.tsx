@@ -12,13 +12,16 @@ export function SiteFooter() {
           <div>
             <img
               src={logoFooter.url}
-              alt={siteConfig.name}
+              alt="UniEjatec"
               width={1209}
               height={262}
               loading="lazy"
               className="h-14 w-auto sm:h-16"
             />
-            <p className="mt-3 max-w-xs type-small text-text-secondary">{siteConfig.description}</p>
+            <p className="mt-4 max-w-xs type-small font-medium text-text-primary">
+              {siteConfig.ecosystemNote}
+            </p>
+            <p className="mt-2 max-w-xs type-small text-text-secondary">{siteConfig.tagline}.</p>
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-4">
             {footerNav.map((group) => (
@@ -42,7 +45,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-divider pt-6 type-caption md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {siteConfig.organization.legalName}.</p>
-          <p>Plataforma editorial e educacional.</p>
+          <p>{siteConfig.fullName}</p>
         </div>
       </Container>
     </footer>
