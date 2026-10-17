@@ -32,9 +32,13 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Rodapé: mantém o logo UniEjatec e adiciona "Mecânica Tec é um portal do ecossistema UniEjatec".
 - Ícone da aba atualizado junto com o logo escolhido.
 
-## Imagens
-- Hero: profissional adulto (35–50 anos), uniforme de trabalho, oficina ou indústria.
-- Capas dos artigos: usinagem/torno CNC, manutenção industrial, mecânica diesel.
+## Imagens (fotografia realista premium, tons que conversam com o azul)
+- Hero: um homem e uma mulher adultos, de uniforme técnico, analisando juntos uma peça ou máquina em oficina moderna/indústria; bancada, ferramentas e equipamentos ao fundo. Mesmo tamanho e proporção do hero atual. As fotos enviadas (mecanica-tec) servem de referência de estilo.
+- Artigos: usinagem/torno CNC, manutenção industrial, mecânica diesel, eletromecânica, metrologia.
+- Cursos técnicos: formação prática em oficina/laboratório.
+- Profissões: o profissional no trabalho real (mecânico industrial, torneiro CNC, soldador...).
+- Áreas da Mecânica: uma imagem específica para cada uma das 8 áreas.
+- Imagens atuais genéricas são substituídas. Os cards de cursos, profissões e áreas passam a exibir imagem (mesmo componente de card já usado nos artigos).
 
 ## Conteúdo e cuidados
 - Sem números inventados, depoimentos, selos do MEC ou "100% online garantido".
