@@ -27,11 +27,10 @@ Transformar o projeto atual num portal especializado em Mecânica, sem reconstru
 ## Menu
 Início · Certificação por Competência (rótulo completo onde houver espaço; endereço /certificacao) · Cursos Técnicos · Áreas da Mecânica · Artigos · Sobre. Botões do topo: "Avaliar experiência" (principal) e "Cursos Técnicos".
 
-## Marca
-- Emblema enviado (engrenagem azul com capelo e seta) vira o símbolo oficial: ícone da aba do navegador (versão azul em fundo transparente) e selo da marca.
-- Kit de marca no projeto com as variações enviadas: azul colorida, azul com detalhes brancos e azul-claro, fundo branco com detalhes brancos sobre azul, branca em fundo azul (badge), preto e branco, preta com detalhes brancos e totalmente preta — para uso em fundos claros, azuis e escuros.
-- Crio **duas opções de logo** "Mecânica Tec" com "by UniEjatec" visível, ambas usando esse emblema ao lado do nome, e mostro para você escolher. O logo atual do topo só é trocado depois da sua escolha.
-- Rodapé: mantém o logo UniEjatec e adiciona "Mecânica Tec é um portal do ecossistema UniEjatec".
+## Marca (braço especializado do ecossistema UniEjatec)
+- Topo: emblema da engrenagem (azul, fundo transparente, do kit enviado) + "Mecânica Tec" em texto real, com "by UniEjatec" logo abaixo, discreto mas visível. Usa as fontes e cores do site. Nenhum logo novo é criado como imagem.
+- Rodapé: mantém o logo UniEjatec (único logo completo em imagem) e adiciona "Mecânica Tec é um portal do ecossistema UniEjatec".
+- Do kit enviado uso só o necessário: emblema azul transparente no topo, favicons e ícones de celular em PNG, e as variações de contraste (ex.: branca sobre azul) nos selos. O kit completo fica guardado como referência, fora do site.
 
 ## Imagens (fotografia realista premium, tons que conversam com o azul)
 - Hero: usar a foto enviada "Colaboração na Oficina de Engenharia" (homem e mulher de uniforme técnico em oficina). Carregada com prioridade (sem espera), em AVIF com WebP como alternativa para navegadores antigos. Mesmo tamanho e proporção do hero atual. As demais fotos enviadas servem de referência de estilo.
@@ -44,7 +43,8 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Foto enviada "profissional certificado 3" (casal de mecânicos trabalhando juntos) é usada no card de Cursos Técnicos do bloco das três frentes e no topo da página de Cursos (AVIF com WebP alternativo).
 - Foto enviada "profissional certificado 4" (torneiro medindo peça com paquímetro ao lado de torno CNC) é usada na área Fabricação e Metalomecânica, na profissão Torneiro CNC e no artigo de usinagem/torno CNC; também serve para Metrologia (AVIF com WebP alternativo).
 - Foto enviada "profissional certificado 5" (três profissionais trabalhando juntos) é usada na área Mecânica Industrial e Manutenção, no artigo de manutenção industrial e na página Sobre (AVIF com WebP alternativo).
-- Imagens ainda sem foto enviada (demais áreas, cursos e profissões) são geradas no mesmo estilo; você pode trocar por fotos suas depois.
+- Nenhuma foto nova é gerada. Áreas, cursos e profissões sem foto própria reaproveitam uma das fotos enviadas com tema próximo ou mostram um espaço reservado com ícone, até você enviar novas imagens.
+- Só o hero usa AVIF com WebP alternativo; as demais fotos usam os arquivos enviados como estão, sem conversões.
 - Imagens atuais genéricas são substituídas. Os cards de cursos, profissões e áreas passam a exibir imagem (mesmo componente de card já usado nos artigos).
 
 ## Conteúdo e cuidados
@@ -60,8 +60,8 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - Hero: `<picture>` com `<source type="image/avif">` + `<img>` WebP, `width=1672 height=941`, `loading="eager"`, `fetchPriority="high"`, `decoding="async"`; ambos os arquivos enviados como assets CDN; `preload` do AVIF no `head()` da home.
 - `adapters/mock/fixtures.ts`: reescrever categorias (8 áreas com os termos), artigos, cursos, profissões, carreiras e glossário; flag `demo: true` nas fixtures.
 - Sitemap inclui `/certificacao`; JSON-LD Organization/WebSite atualizado.
-- Logos via imagegen premium (2 candidatos, usando o emblema enviado como referência) apresentados para escolha; identidade atual permanece até a escolha.
-- Kit de marca: base no zip `mecanica-tec-icon-kit` (6 variações: transparent-blue, transparent-bicolor, transparent-black, blue-bg-white, black-bg-white, white-bg-blue; tamanhos 16–1024 + fontes 1254). Converto os tamanhos de uso na interface (128, 256, 512, 1024) para AVIF e WebP, mantendo PNG como alternativa; tudo como assets CDN em `src/assets/brand/`, exportado por `src/config/brand.config.ts` e exibido via `<picture>`.
-- Favicon e ícones de app ficam em PNG (formato exigido por navegadores e celulares): `public/favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `apple-touch-icon.png` (180) e `icon-192/512.png` da variação transparent-blue; `site.webmanifest` com 192/512; tudo referenciado no `__root.tsx` e `favicon.ico` antigo removido.
+- Sem imagegen para logos ou fotos. Header: novo `BrandLockup` (emblema `<img>` + nome e assinatura em HTML/CSS), configurado em `src/config/brand.config.ts`.
+- Do zip, importar só: transparent-blue 128/256 (header, asset CDN), blue-bg-white e white-bg-blue 256 (selos de contraste, assets CDN). Kit completo não entra no app.
+- Favicons em `public/`: `favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png` (transparent-blue) + `site.webmanifest`; referenciados no `__root.tsx`. Arquivos de compatibilidade existentes (`favicon.png`/`favicon.ico`) são mantidos, só atualizados para o novo emblema.
 - Rotas alimentadas por fixtures `demo: true` recebem `robots: noindex` e saem do sitemap.
 - Memória: posicionamento, três frentes, público adulto, proibição de promessas/números fictícios, paleta azul mantida. `AGENTS.md`: separação config/dados/interface para continuação no Codex.
