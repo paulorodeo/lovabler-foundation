@@ -41,6 +41,7 @@ Início · Certificação por Competência (rótulo completo onde houver espaço
 - A foto com marca SENAI (mecanica-tec_4) não será usada. A página de Certificação por Competência usa a nova imagem do profissional experiente analisando componentes com tablet, sem marcas de terceiros.
 - Foto enviada "profissional certificado" (mecânico de caminhão) é usada na área Mecânica Pesada e Agrícola, no curso/profissão de Mecânico Diesel e no artigo de mecânica diesel (AVIF com WebP alternativo).
 - Foto enviada "profissional certificado 3" (casal de mecânicos trabalhando juntos) é usada no card de Cursos Técnicos do bloco das três frentes e no topo da página de Cursos (AVIF com WebP alternativo).
+- Foto enviada "profissional certificado 4" (torneiro medindo peça com paquímetro ao lado de torno CNC) é usada na área Fabricação e Metalomecânica, na profissão Torneiro CNC e no artigo de usinagem/torno CNC; também serve para Metrologia (AVIF com WebP alternativo).
 - Imagens atuais genéricas são substituídas. Os cards de cursos, profissões e áreas passam a exibir imagem (mesmo componente de card já usado nos artigos).
 
 ## Conteúdo e cuidados
