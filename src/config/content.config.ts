@@ -19,6 +19,7 @@ const FIXTURE_DOMAINS: ReadonlySet<RouteDefinition["domain"]> = new Set([
 ]);
 
 const FIXTURE_PATHS: ReadonlySet<string> = new Set([
+  "/certificacao", // demonstrativa até receber conteúdo definitivo
   "/autores",
   "/autores/$slug",
   "/instituicoes",
