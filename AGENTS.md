@@ -11,3 +11,4 @@
 
 - Copy, brand and photo choices live in `src/config/*.config.ts`; components only read config — keeps UI, configuration and data separate for later Codex work.
 - Indexing of fixture-backed pages is decided only by `src/config/content.config.ts` (`isDemoRoute`); route heads and the sitemap both use it, so switching the content source flips SEO in one place.
+- Site images live as real files in `public/assets/` and are referenced by absolute `/assets/...` paths from config — keeps deploys (e.g. Cloudflare Workers via GitHub) independent of Lovable's asset CDN.
