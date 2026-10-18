@@ -4,7 +4,7 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/contato")({
-  head: () => buildHubHead(routes.contact, "Fale com a UniEjatec."),
+  head: () => buildHubHead(routes.contact, "Fale com a Mecânica Tec."),
   component: () => (
     <InstitutionalPage overline="Institucional" title="Contato" description="Canais oficiais de atendimento." />
   ),

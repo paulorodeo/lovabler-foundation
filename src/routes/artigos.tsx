@@ -16,7 +16,7 @@ function ArticlesHub() {
     <HubPage
       overline="Editorial"
       title="Artigos"
-      description="Análises, tendências e orientação profissional produzidas pela UniEjatec."
+      description="Análises, tendências e orientação profissional produzidas pela Mecânica Tec."
       hrefPrefix={routes.articlesHub.path}
       isLoading={q.isLoading}
       isError={q.isError}

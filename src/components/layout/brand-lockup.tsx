@@ -15,7 +15,7 @@ export function BrandLockup({ className = "" }: { className?: string }) {
         className="h-11 w-11 shrink-0 sm:h-12 sm:w-12"
       />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-bold tracking-tight text-text-primary sm:text-xl">
+        <span className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-text-primary sm:text-xl">
           {brandConfig.name}
         </span>
         <span className="mt-1 text-xs font-medium text-text-secondary">{brandConfig.signature}</span>

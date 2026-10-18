@@ -5,7 +5,7 @@ import { buildDetailHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/cursos/$slug")({
-  head: ({ params }) => buildDetailHead(routes.coursesHub, params.slug, `Curso · ${params.slug}`, "Curso da UniEjatec."),
+  head: ({ params }) => buildDetailHead(routes.coursesHub, params.slug, `Curso · ${params.slug}`, "Curso da Mecânica Tec."),
   component: CourseDetail,
 });
 

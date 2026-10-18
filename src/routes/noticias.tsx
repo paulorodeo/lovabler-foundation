@@ -5,7 +5,7 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/noticias")({
-  head: () => buildHubHead(routes.newsHub, "Notícias da UniEjatec e do universo educacional."),
+  head: () => buildHubHead(routes.newsHub, "Notícias da Mecânica Tec e do universo educacional."),
   component: NewsHub,
 });
 

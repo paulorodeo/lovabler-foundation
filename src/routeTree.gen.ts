@@ -16,6 +16,7 @@ import { Route as AutoresRouteImport } from './routes/autores'
 import { Route as BuscaRouteImport } from './routes/busca'
 import { Route as CarreirasRouteImport } from './routes/carreiras'
 import { Route as CategoriasRouteImport } from './routes/categorias'
+import { Route as CertificacaoRouteImport } from './routes/certificacao'
 import { Route as CertificadosRouteImport } from './routes/certificados'
 import { Route as ComparativosRouteImport } from './routes/comparativos'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -84,6 +85,11 @@ const CarreirasRoute = CarreirasRouteImport.update({
 const CategoriasRoute = CategoriasRouteImport.update({
   id: '/categorias',
   path: '/categorias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificacaoRoute = CertificacaoRouteImport.update({
+  id: '/certificacao',
+  path: '/certificacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CertificadosRoute = CertificadosRouteImport.update({
@@ -265,6 +271,7 @@ export interface FileRoutesByFullPath {
   '/busca': typeof BuscaRoute
   '/carreiras': typeof CarreirasRouteWithChildren
   '/categorias': typeof CategoriasRouteWithChildren
+  '/certificacao': typeof CertificacaoRoute
   '/certificados': typeof CertificadosRoute
   '/comparativos': typeof ComparativosRouteWithChildren
   '/contato': typeof ContatoRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByTo {
   '/busca': typeof BuscaRoute
   '/carreiras': typeof CarreirasRouteWithChildren
   '/categorias': typeof CategoriasRouteWithChildren
+  '/certificacao': typeof CertificacaoRoute
   '/certificados': typeof CertificadosRoute
   '/comparativos': typeof ComparativosRouteWithChildren
   '/contato': typeof ContatoRoute
@@ -352,6 +360,7 @@ export interface FileRoutesById {
   '/busca': typeof BuscaRoute
   '/carreiras': typeof CarreirasRouteWithChildren
   '/categorias': typeof CategoriasRouteWithChildren
+  '/certificacao': typeof CertificacaoRoute
   '/certificados': typeof CertificadosRoute
   '/comparativos': typeof ComparativosRouteWithChildren
   '/contato': typeof ContatoRoute
@@ -397,6 +406,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/carreiras'
     | '/categorias'
+    | '/certificacao'
     | '/certificados'
     | '/comparativos'
     | '/contato'
@@ -440,6 +450,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/carreiras'
     | '/categorias'
+    | '/certificacao'
     | '/certificados'
     | '/comparativos'
     | '/contato'
@@ -483,6 +494,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/carreiras'
     | '/categorias'
+    | '/certificacao'
     | '/certificados'
     | '/comparativos'
     | '/contato'
@@ -527,6 +539,7 @@ export interface RootRouteChildren {
   BuscaRoute: typeof BuscaRoute
   CarreirasRoute: typeof CarreirasRouteWithChildren
   CategoriasRoute: typeof CategoriasRouteWithChildren
+  CertificacaoRoute: typeof CertificacaoRoute
   CertificadosRoute: typeof CertificadosRoute
   ComparativosRoute: typeof ComparativosRouteWithChildren
   ContatoRoute: typeof ContatoRoute
@@ -599,6 +612,13 @@ declare module '@tanstack/react-router' {
       path: '/categorias'
       fullPath: '/categorias'
       preLoaderRoute: typeof CategoriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificacao': {
+      id: '/certificacao'
+      path: '/certificacao'
+      fullPath: '/certificacao'
+      preLoaderRoute: typeof CertificacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certificados': {
@@ -999,6 +1019,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuscaRoute: BuscaRoute,
   CarreirasRoute: CarreirasRouteWithChildren,
   CategoriasRoute: CategoriasRouteWithChildren,
+  CertificacaoRoute: CertificacaoRoute,
   CertificadosRoute: CertificadosRoute,
   ComparativosRoute: ComparativosRouteWithChildren,
   ContatoRoute: ContatoRoute,

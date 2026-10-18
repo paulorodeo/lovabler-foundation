@@ -5,7 +5,7 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/autores")({
-  head: () => buildHubHead(routes.authorsHub, "Autores e colaboradores da UniEjatec."),
+  head: () => buildHubHead(routes.authorsHub, "Autores e colaboradores da Mecânica Tec."),
   component: AuthorsHub,
 });
 

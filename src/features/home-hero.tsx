@@ -1,19 +1,21 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Award, GraduationCap, Monitor, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, BadgeCheck, BookOpen, GraduationCap, Network } from "lucide-react";
 import { Container } from "@/components/ui/layout-primitives";
 import { Badge } from "@/components/ui/badge";
 import { heroConfig } from "@/config/site.config";
-import heroImage from "@/assets/hero-uniejatec.jpg";
+import { brandConfig } from "@/config/brand.config";
+import { photos } from "@/config/photos.config";
 
 const icons = {
-  shield: ShieldCheck,
-  monitor: Monitor,
+  badge: BadgeCheck,
   cap: GraduationCap,
-  award: Award,
+  book: BookOpen,
+  network: Network,
 } as const;
 
 /**
- * HomeHero — dobra inicial da home (copy + selos + imagem com card de estatística).
+ * HomeHero — dobra inicial: copy, CTAs das duas jornadas comerciais e foto principal.
+ * A foto é o LCP: carregamento imediato e prioridade alta (AVIF com fallback WebP).
  */
 export function HomeHero() {
   return (
@@ -68,20 +70,32 @@ export function HomeHero() {
             </div>
 
             <div className="relative">
-              <img
-                src={heroImage}
-                alt="Estudantes reunidos estudando em um espaço moderno de aprendizagem"
-                width={1408}
-                height={1056}
-                className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg lg:aspect-[5/4]"
-              />
-              <div className="mt-4 flex items-center gap-3 rounded-xl border border-border bg-surface p-4 shadow-lg sm:absolute sm:-top-4 sm:right-0 sm:mt-0 sm:max-w-[13rem] sm:flex-col sm:items-start lg:-right-6">
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Users className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="type-h3 text-text-primary">{heroConfig.stat.value}</p>
-                  <p className="type-small text-text-secondary">{heroConfig.stat.description}</p>
+              <picture>
+                <source srcSet={photos.hero.avif} type="image/avif" />
+                <img
+                  src={photos.hero.webp}
+                  alt={photos.hero.alt}
+                  width={photos.hero.width}
+                  height={photos.hero.height}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="aspect-[4/3] w-full rounded-xl object-cover shadow-lg lg:aspect-[5/4]"
+                />
+              </picture>
+              <div className="mt-4 flex items-center gap-3 rounded-xl border border-border bg-surface p-3 shadow-lg sm:absolute sm:-bottom-4 sm:left-4 sm:mt-0">
+                <img
+                  src={brandConfig.emblem.onBlue}
+                  alt=""
+                  aria-hidden
+                  width={256}
+                  height={256}
+                  loading="lazy"
+                  className="h-11 w-11 rounded-lg"
+                />
+                <div className="leading-tight">
+                  <p className="type-small font-semibold text-text-primary">{brandConfig.name}</p>
+                  <p className="type-caption text-text-secondary">{brandConfig.signature}</p>
                 </div>
               </div>
             </div>

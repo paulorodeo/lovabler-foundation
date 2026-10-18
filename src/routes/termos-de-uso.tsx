@@ -4,6 +4,6 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/termos-de-uso")({
-  head: () => buildHubHead(routes.terms, "Termos de Uso da plataforma UniEjatec."),
+  head: () => buildHubHead(routes.terms, "Termos de Uso da Mecânica Tec."),
   component: () => <InstitutionalPage overline="Legal" title="Termos de Uso" description="Condições de uso da plataforma." />,
 });

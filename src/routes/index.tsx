@@ -4,19 +4,37 @@ import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/c
 import { Badge } from "@/components/ui/badge";
 import { ContentGrid } from "@/features/content-grid";
 import { HomeHero } from "@/features/home-hero";
+import { HomePillars } from "@/features/home-pillars";
+import { photos } from "@/config/photos.config";
 import { useArticles, useCourses, useProfessions } from "@/hooks/use-content";
 import { buildRouteHead } from "@/components/seo/head";
 import { routes } from "@/config/routes.config";
 import { siteConfig } from "@/config/site.config";
 
 export const Route = createFileRoute("/")({
-  head: () =>
-    buildRouteHead({
+  head: () => {
+    const h = buildRouteHead({
       title: siteConfig.tagline,
       description: siteConfig.description,
       path: "/",
       ogType: "website",
-    }),
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        inLanguage: siteConfig.locale,
+        publisher: { "@type": "Organization", name: siteConfig.organization.parent.name },
+      },
+    });
+    return {
+      ...h,
+      links: [
+        ...h.links,
+        { rel: "preload", as: "image", href: photos.hero.avif, type: "image/avif", fetchPriority: "high" },
+      ],
+    };
+  },
   component: HomePage,
 });
 
@@ -28,7 +46,7 @@ function HomePage() {
   return (
     <>
       <HomeHero />
-
+      <HomePillars />
 
       <Section>
         <Container size="xl">
@@ -52,7 +70,7 @@ function HomePage() {
 
       <Section className="bg-surface">
         <Container size="xl">
-          <SectionHeading title="Cursos recomendados" to={routes.coursesHub.path} />
+          <SectionHeading title="Cursos Técnicos de Mecânica" to={routes.coursesHub.path} />
           <ContentGrid
             hrefPrefix={routes.coursesHub.path}
             isLoading={courses.isLoading}
@@ -61,7 +79,8 @@ function HomePage() {
               slug: c.slug,
               title: c.title,
               excerpt: c.excerpt,
-              badge: c.modality.toUpperCase(),
+              badge: "Curso Técnico",
+              image: c.coverImage ? { url: c.coverImage.url, alt: c.coverImage.alt } : undefined,
             }))}
           />
         </Container>
