@@ -13,6 +13,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { Grid } from "@/components/ui/layout-primitives";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
+import { Cog } from "lucide-react";
 
 export interface ContentGridItem {
   slug: string;
@@ -20,6 +21,8 @@ export interface ContentGridItem {
   excerpt?: string;
   badge?: string;
   image?: { url: string; alt: string };
+  /** Capa tipográfica: título escrito sobre fundo azul, no lugar de foto. */
+  textCover?: boolean;
 }
 
 interface Props {
@@ -64,7 +67,12 @@ export function ContentGrid({
       {items.map((item) => (
         <a key={item.slug} href={`${hrefPrefix}/${item.slug}`} className="group">
           <Card className="h-full overflow-hidden transition-transform group-hover:-translate-y-0.5">
-            {item.image ? (
+            {item.textCover ? (
+              <div className="relative flex aspect-[3/2] w-full items-center justify-center overflow-hidden bg-primary p-6 text-center">
+                <Cog aria-hidden className="absolute -right-6 -bottom-6 h-32 w-32 text-primary-foreground/10" />
+                <span className="relative type-h3 text-primary-foreground">{item.title}</span>
+              </div>
+            ) : item.image ? (
               <img
                 src={item.image.url}
                 alt={item.image.alt}

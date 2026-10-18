@@ -72,21 +72,9 @@ function AreasStrip() {
                   params={{ slug: a.slug }}
                   className="flex h-full items-center gap-3 rounded-lg border border-border bg-surface p-3 hover:border-primary hover:text-primary"
                 >
-                  {a.coverImage ? (
-                    <img
-                      src={a.coverImage.url}
-                      alt=""
-                      aria-hidden
-                      loading="lazy"
-                      width={64}
-                      height={64}
-                      className="h-14 w-14 shrink-0 rounded-md object-cover"
-                    />
-                  ) : (
-                    <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
-                      <Cog className="h-6 w-6" />
-                    </span>
-                  )}
+                  <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <Cog className="h-6 w-6" />
+                  </span>
                   <span className="type-small font-medium leading-snug">{a.title}</span>
                 </Link>
               </li>

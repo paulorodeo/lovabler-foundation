@@ -19,7 +19,7 @@ function CoursesHub() {
       hrefPrefix={routes.coursesHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
-      items={q.data?.data.map((c) => ({ slug: c.slug, title: c.title, excerpt: c.excerpt, badge: "Curso Técnico", image: c.coverImage ? { url: c.coverImage.url, alt: c.coverImage.alt } : undefined }))}
+      items={q.data?.data.map((c) => ({ slug: c.slug, title: c.title, excerpt: c.excerpt, badge: "Curso Técnico", textCover: true }))}
     />
   );
 }
