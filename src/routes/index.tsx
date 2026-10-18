@@ -80,7 +80,7 @@ function HomePage() {
               title: c.title,
               excerpt: c.excerpt,
               badge: "Curso Técnico",
-              image: c.coverImage ? { url: c.coverImage.url, alt: c.coverImage.alt } : undefined,
+              textCover: true,
             }))}
           />
         </Container>
