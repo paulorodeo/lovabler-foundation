@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Copy, brand and photo choices live in `src/config/*.config.ts`; components only read config — keeps UI, configuration and data separate for later Codex work.
+- Indexing of fixture-backed pages is decided only by `src/config/content.config.ts` (`isDemoRoute`); route heads and the sitemap both use it, so switching the content source flips SEO in one place.
