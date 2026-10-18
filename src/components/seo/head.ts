@@ -19,7 +19,7 @@ export interface RouteSeoInput {
 
 export interface HeadDescriptor {
   meta: Array<Record<string, string>>;
-  links: Array<{ rel: string; href: string }>;
+  links: Array<Record<string, string>>;
   scripts?: Array<{ type: string; children: string }>;
 }
 
