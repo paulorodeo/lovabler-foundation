@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Container } from "@/components/ui/layout-primitives";
 import { footerNav } from "@/config/navigation.config";
 import { siteConfig } from "@/config/site.config";
-import logoFooter from "@/assets/logo-footer.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -11,7 +10,7 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
           <div>
             <img
-              src={logoFooter.url}
+              src="/assets/brand/logo-uniejatec-footer.png"
               alt="UniEjatec"
               width={1209}
               height={262}
