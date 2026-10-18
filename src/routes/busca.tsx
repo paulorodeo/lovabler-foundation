@@ -16,7 +16,7 @@ const searchSchema = z.object({ q: z.string().optional() });
 
 export const Route = createFileRoute("/busca")({
   validateSearch: searchSchema,
-  head: () => buildHubHead(routes.search, "Busca em toda a plataforma UniEjatec."),
+  head: () => buildHubHead(routes.search, "Busca em toda a Mecânica Tec."),
   component: SearchPage,
 });
 

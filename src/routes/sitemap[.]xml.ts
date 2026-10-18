@@ -6,9 +6,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { routes } from "@/config/routes.config";
 import { createMockAdapter } from "@/adapters/mock";
+import { contentConfig, isIndexableRoute } from "@/config/content.config";
+import { siteConfig } from "@/config/site.config";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+const BASE_URL = siteConfig.url;
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const adapter = createMockAdapter();
         const staticPaths = Object.values(routes)
-          .filter((r) => r.indexable && !("dynamic" in r && r.dynamic))
+          .filter((r) => isIndexableRoute(r) && !("dynamic" in r && r.dynamic))
           .map((r) => r.path);
 
         const dynamicPaths: string[] = [];
@@ -35,7 +36,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           [routes.authorsHub.path, () => adapter.authors.list({ limit: 1000 }).then((r) => ({ data: r.data }))],
           [routes.categoriesHub.path, () => adapter.categories.list({ limit: 1000 }).then((r) => ({ data: r.data }))],
         ];
-        for (const [prefix, fetcher] of collectors) {
+        // Conteúdo demonstrativo (fixtures) nunca entra no sitemap.
+        for (const [prefix, fetcher] of contentConfig.source === "mock" ? [] : collectors) {
           const res = await fetcher();
           for (const item of res.data) dynamicPaths.push(`${prefix}/${item.slug}`);
         }

@@ -5,7 +5,7 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/faq")({
-  head: () => buildHubHead(routes.faqHub, "Perguntas frequentes sobre cursos, matrícula e a UniEjatec."),
+  head: () => buildHubHead(routes.faqHub, "Perguntas frequentes sobre certificação, cursos técnicos e a Mecânica Tec."),
   component: FaqHub,
 });
 

@@ -5,7 +5,7 @@ import { buildHubHead } from "@/lib/route-head";
 import { routes } from "@/config/routes.config";
 
 export const Route = createFileRoute("/instituicoes")({
-  head: () => buildHubHead(routes.institutionsHub, "Instituições parceiras da UniEjatec."),
+  head: () => buildHubHead(routes.institutionsHub, "Instituições parceiras da Mecânica Tec."),
   component: InstitutionsHub,
 });
 
@@ -15,7 +15,7 @@ function InstitutionsHub() {
     <HubPage
       overline="Institucional"
       title="Instituições"
-      description="Conheça a UniEjatec e sua rede de instituições parceiras."
+      description="Conheça o ecossistema UniEjatec e sua rede de instituições parceiras."
       hrefPrefix={routes.institutionsHub.path}
       isLoading={q.isLoading}
       isError={q.isError}
