@@ -6,6 +6,7 @@
  */
 
 import { seoConfig } from "@/config/seo.config";
+import { siteConfig } from "@/config/site.config";
 
 export interface RouteSeoInput {
   title: string;
@@ -31,7 +32,7 @@ export function buildRouteHead(input: RouteSeoInput): HeadDescriptor {
     { property: "og:title", content: title },
     { property: "og:description", content: input.description },
     { property: "og:type", content: input.ogType ?? "website" },
-    { property: "og:url", content: input.path },
+    { property: "og:url", content: new URL(input.path, siteConfig.url).toString() },
     { property: "og:locale", content: seoConfig.locale },
     { name: "twitter:card", content: seoConfig.twitterCard },
     { name: "twitter:title", content: title },
@@ -45,7 +46,7 @@ export function buildRouteHead(input: RouteSeoInput): HeadDescriptor {
     meta.push({ property: "og:image", content: input.image });
     meta.push({ name: "twitter:image", content: input.image });
   }
-  const links = [{ rel: "canonical", href: input.path }];
+  const links = [{ rel: "canonical", href: new URL(input.path, siteConfig.url).toString() }];
   const scripts = input.jsonLd
     ? [
         {
